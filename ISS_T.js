@@ -16,7 +16,7 @@ var modelLayer = new WorldWind.RenderableLayer();
 wwd.addLayer(modelLayer);
 
 var position = new WorldWind.Position(10.0, -125.0, 800000.0);
-var config = {dirPath: WorldWind.configuration.baseUrl + 'examples/collada_models/duck/'};
+var config = {dirPath: '/'};
 
 var colladaLoader = new WorldWind.ColladaLoader(position, config);
 colladaLoader.load("ISSlow.dae", function (colladaModel) {
