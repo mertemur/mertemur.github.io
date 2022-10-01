@@ -9,6 +9,8 @@ wwd.addLayer(new WorldWind.BMNGLandsatLayer());                              //h
 wwd.addLayer(new WorldWind.CompassLayer());                                 
 wwd.addLayer(new WorldWind.CoordinatesDisplayLayer(wwd));                   
 wwd.addLayer(new WorldWind.ViewControlsLayer(wwd));                         
+
+
 // Add a polygon
 var polygonLayer = new WorldWind.RenderableLayer();
 wwd.addLayer(polygonLayer);
@@ -28,25 +30,13 @@ var polygon = new WorldWind.Polygon(boundaries, polygonAttributes);
 polygon.extrude = true;
 polygonLayer.addRenderable(polygon);
 
-// Add a COLLADA model
-var modelLayer = new WorldWind.RenderableLayer();
-wwd.addLayer(modelLayer);
-
-var position = new WorldWind.Position(10.0, -125.0, 800000.0);
-var config = {dirPath: WorldWind.configuration.baseUrl + 'examples/collada_models/duck/'};
-
-var colladaLoader = new WorldWind.ColladaLoader(position, config);
-colladaLoader.load("duck.dae", function (colladaModel) {
-    colladaModel.scale = 9000;
-    modelLayer.addRenderable(colladaModel);
-});
 
 // Add a COLLADA model
 var modelLayer = new WorldWind.RenderableLayer();
 wwd.addLayer(modelLayer);
 
 var position = new WorldWind.Position(10.0, -125.0, 800000.0);
-var config = {dirPath: '/'};
+var config = {dirPath: 'mertemur.github.io'};
 
 var colladaLoader = new WorldWind.ColladaLoader(position, config);
 colladaLoader.load("ISSlow.dae", function (colladaModel) {
