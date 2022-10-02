@@ -33,7 +33,7 @@ colladaLoader.load("ISSlow.dae", async function (colladaModel) {
     modelLayer.removeRenderable(colladaModel);
 });
 
-    let url = "http://api.open-notify.org/iss-now.json"
+    let url = "https://api.open-notify.org/iss-now.json"
     fetch(url)
     .then((resp) => resp.json())
     .then((data) => getData(data))
