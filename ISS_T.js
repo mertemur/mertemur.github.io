@@ -19,21 +19,23 @@ async function modelimiz() {
 var modelLayer = new WorldWind.RenderableLayer();
 wwd.addLayer(modelLayer);
 
-await sleep(3000);
+await sleep(15000);
 
-var config = {dirPath: 'https://mertemur.github.io/mertemur.github.io/'};
+//var config = {dirPath: 'https://mertemur.github.io/mertemur.github.io/'};
+var config = {dirPath: WorldWind.configuration.baseUrl + 'examples/collada_models/duck/'};
 
+console.log(WorldWind.configuration.baseUrl)
 var colladaLoader = new WorldWind.ColladaLoader(position, config);
-colladaLoader.load("ISSlow.dae", async function (colladaModel) {
+colladaLoader.load("duck.dae", async function (colladaModel) {
     colladaModel.scale = 9000;
     modelLayer.addRenderable(colladaModel);
     //var popopo = new WorldWind.Position(colladaModel.position.latitude+8.0,colladaModel.position.longitude-1,colladaModel.position.altitude);
     //position = popopo;
-    await sleep(3000);
+    await sleep(10000);
     modelLayer.removeRenderable(colladaModel);
 });
 
-    let url = "https://api.open-notify.org/iss-now.json"
+    let url = "http://api.open-notify.org/iss-now.json"
     fetch(url)
     .then((resp) => resp.json())
     .then((data) => getData(data))
