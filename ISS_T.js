@@ -21,7 +21,7 @@ wwd.addLayer(modelLayer);
 
 await sleep(3000);
 
-var config = {dirPath: 'D:/METU/SpaceApps/ISS_Tracker/'};
+var config = {dirPath: 'https://mertemur.github.io/mertemur.github.io/'};
 
 var colladaLoader = new WorldWind.ColladaLoader(position, config);
 colladaLoader.load("ISSlow.dae", async function (colladaModel) {
